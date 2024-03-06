@@ -4,7 +4,16 @@
     {
         static void Main()
         {
-            Console.WriteLine();
+            FlowerShop flowerShop = new FlowerShop();
+
+            IFlowerBuilder roseBuilder = new RoseBuilder();
+            IFlowerBuilder lilyBuilder = new LilyBuilder();
+
+            Flower rose = flowerShop.CreateFlower(roseBuilder);
+            Flower lily = flowerShop.CreateFlower(lilyBuilder);
+
+            rose.Display();
+            lily.Display();
         }
     }
 }
